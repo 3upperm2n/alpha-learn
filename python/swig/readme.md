@@ -1,9 +1,9 @@
 ## swig
 http://www.swig.org/tutorial.html
-[1]install swig
+*install swig
 sudo apt-get install swig
 
-[2]steps
+*steps
 native code
 interface file
 
