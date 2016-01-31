@@ -3,10 +3,12 @@
 ~*
 *~
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# Cmakes
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+
 
 # Compiled Static libraries
 *.lai
@@ -14,7 +16,17 @@
 *.a
 *.lib
 
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
 # Executables
 *.exe
 *.out
 *.app
+
+# specific dir
+bin
+
