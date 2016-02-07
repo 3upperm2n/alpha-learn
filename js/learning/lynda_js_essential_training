@@ -1,0 +1,9 @@
+Apatana Studio 3
+FireFox -> install firebug addon -> use "Console" feature
+
+js is case sensitive
+js is whitespace insensitive
+
+put js at the bottom of the pager to avoid rendering delay
+
+
