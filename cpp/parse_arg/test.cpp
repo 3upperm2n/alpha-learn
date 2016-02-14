@@ -7,7 +7,7 @@
 using namespace std;
 
 const char short_opt[] = {'w', 'h', 'u', '\0'};
-const char *long_opt[] = {"--width", "--height", "--usage"};
+const char *long_opt[] = {"--width", "--height", "--usage", ""};
 
 void usage(char *argv)
 {
@@ -35,7 +35,7 @@ int read_opt(int argc, char **argv, int id, void *data, const char *datatype)
 {
   if(strcmp(datatype, "int")==0) {
 	if(id+1 >= argc) {
-	  fprintf(stderr, "incomplete input for %s\n", argv[id]);
+	  fprintf(stderr, "incomplete input");
 	  usage(argv[0]);
 	  exit(EXIT_FAILURE);
 	}
