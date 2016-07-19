@@ -47,7 +47,7 @@ int main(int argc, char **argv)
 	mtime/=1000;
 	mtime+=seconds*1000;
 
-	printf("%f\n", mtime);
+	printf("%f ms\n", mtime);
 
 
 	// option 2
@@ -64,7 +64,7 @@ int main(int argc, char **argv)
 	mtime/=1000;
 	mtime+=seconds*1000;
 
-	printf("%f\n", mtime);
+	printf("%f ms\n", mtime);
 
 	return 0;
 }
