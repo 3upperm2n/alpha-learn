@@ -24,11 +24,12 @@ def foo(n, taskid, shared_timing_arr):
 
 
 
-def run_mp(func_param, taskid, shared_timing_arr):
+def run_mp(jobs, func_param, taskid, shared_timing_arr):
     #print("run task {}".format(taskid))
     p = mp.Process(target=foo, args=(2000 * func_param, taskid, shared_timing_arr))
+    jobs.append(p)
     p.start()
-    p.join()
+    #p.join()
 
 
 def main(args):
@@ -42,13 +43,20 @@ def main(args):
     print timing_arr[0]
     print timing_arr[1]
 
-    run_mp(1, 0, timing_arr)
+
+    jobs = []
+
+    run_mp(jobs, 1, 0, timing_arr)
+
+    jobs[0].join()
     print("task 0: start {} to end {} = {:.3f}".format(timing_arr[0], 
         timing_arr[1], timing_arr[1] - timing_arr[0]))
 
+
     time.sleep(1)
 
-    run_mp(2, 1, timing_arr)
+    run_mp(jobs, 2, 1, timing_arr)
+    jobs[1].join()
     print("task 1: start {} to end {} = {:.3f}".format(timing_arr[2], 
         timing_arr[3], timing_arr[3] - timing_arr[2]))
 
